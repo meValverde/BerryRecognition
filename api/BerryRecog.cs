@@ -37,7 +37,7 @@ namespace BerryApp
 
             using (var content = new ByteArrayContent(byteData))
             {
-                content.Headers.ContentType = new MediaTypeHeaderValue("< your content type, i.e. application/json >");
+                content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
                 response = await client.PostAsync(url, content);
                 
             }

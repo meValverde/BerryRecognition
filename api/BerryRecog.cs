@@ -29,8 +29,7 @@ namespace BerryApp
             // Prediction URL - replace this example URL with your valid Prediction URL.
             string url = "https://berryprediction-prediction.cognitiveservices.azure.com/customvision/v3.0/Prediction/1cd03d8e-e79a-4e17-ba18-a6d672ccd759/classify/iterations/berryR/url";
 
-            HttpResponseMessage response;
-
+           
             // Request body. Try this sample with a locally stored image.
 
             string someUrl="https://www.jespersplanteskole.dk/media/catalog/product/cache/1/image/1200x1200/9df78eab33525d08d6e5fb8d27136e95/s/y/symphoricarpos_doorenbosii_white_hedge_79_95_13.jpg";
@@ -39,9 +38,11 @@ namespace BerryApp
             using (var content = new ByteArrayContent(byteData))
             {
                 content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-                response = await client.PostAsync(url, content);
+                var response = await client.PostAsync(url, content);
                 
             }
+
+            return new OkObjectResult(response);
         }
 
             

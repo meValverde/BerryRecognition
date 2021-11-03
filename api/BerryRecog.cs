@@ -35,8 +35,8 @@ namespace BerryApp
             using (var webClient = new webClient(byteData))
             {
                 byte[] byteData = webClient.DownloadData(someUrl);
-                content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-                response = await client.PostAsync(url, content);
+                webClient.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+                response = await client.PostAsync(url, webClient);
                 
             }
 

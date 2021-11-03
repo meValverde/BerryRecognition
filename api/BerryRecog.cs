@@ -41,11 +41,7 @@ namespace BerryApp
 
             return new OkObjectResult(response);
         }
-
             
-        }
-
-            
-    
+              
     }
 }

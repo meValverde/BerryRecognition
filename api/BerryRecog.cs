@@ -21,33 +21,33 @@ namespace BerryApp
             [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req,
             ILogger log)
         {
-
-            string url="https://www.jespersplanteskole.dk/media/catalog/product/cache/1/image/1200x1200/9df78eab33525d08d6e5fb8d27136e95/s/y/symphoricarpos_doorenbosii_white_hedge_79_95_13.jpg";
             var client = new HttpClient();
-            var queryString = HttpUtility.ParseQueryString(url.Empty);
 
             // Request headers - replace this example key with your valid Prediction-Key.
             client.DefaultRequestHeaders.Add("Prediction-Key", "c577dc58f5374413a3fea829c4938399");
 
-            queryString["application"] = url;
-
             // Prediction URL - replace this example URL with your valid Prediction URL.
-            var uri = "https://berryprediction-prediction.cognitiveservices.azure.com/customvision/v3.0/Prediction/1cd03d8e-e79a-4e17-ba18-a6d672ccd759/classify/iterations/berryR/url"+ queryString;
+            string url = "https://berryprediction-prediction.cognitiveservices.azure.com/customvision/v3.0/Prediction/1cd03d8e-e79a-4e17-ba18-a6d672ccd759/classify/iterations/berryR/url";
 
             HttpResponseMessage response;
 
             // Request body. Try this sample with a locally stored image.
-            
-            byte[] byteData = Encoding.UTF8.GetBytes("{body}");
+
+            string someUrl="https://www.jespersplanteskole.dk/media/catalog/product/cache/1/image/1200x1200/9df78eab33525d08d6e5fb8d27136e95/s/y/symphoricarpos_doorenbosii_white_hedge_79_95_13.jpg";
+            byte[] byteData = webClient.DownloadData(someUrl);
 
             using (var content = new ByteArrayContent(byteData))
             {
-               content.Headers.ContentType = new MediaTypeHeaderValue("application/json >");
-               response = await client.PostAsync(uri, content);
+                content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+                response = await client.PostAsync(url, content);
+                
             }
         }
 
             
         }
+
+            
+    
     }
 }

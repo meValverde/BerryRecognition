@@ -28,13 +28,13 @@ namespace BerryApp
             client.DefaultRequestHeaders.Add("Prediction-key", "c577dc58f5374413a3fea829c4938399");
 
             // Request parameters
-            queryString["application"] = "{string}";
+            queryString["application"] = "https://www.jespersplanteskole.dk/media/catalog/product/cache/1/image/1200x1200/9df78eab33525d08d6e5fb8d27136e95/s/y/symphoricarpos_doorenbosii_white_hedge_79_95_13.jpg";
             var uri = "https://berryprediction-prediction.cognitiveservices.azure.com/customvision/v3.0/Prediction/1cd03d8e-e79a-4e17-ba18-a6d672ccd759/classify/iterations/berryR/url" + queryString;
 
             HttpResponseMessage response;
 
             // Request body
-            byte[] byteData = Encoding.UTF8.GetBytes("https://www.amagerfaelled.dk/wp-content/uploads/2019/01/Sneb%C3%A6r-5-e1548490971374.jpg");
+            byte[] byteData = Encoding.UTF8.GetBytes("{body}");
 
             using (var content = new ByteArrayContent(byteData))
             {

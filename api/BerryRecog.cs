@@ -31,7 +31,7 @@ namespace BerryApp
             queryString["application"] = "https://www.jespersplanteskole.dk/media/catalog/product/cache/1/image/1200x1200/9df78eab33525d08d6e5fb8d27136e95/s/y/symphoricarpos_doorenbosii_white_hedge_79_95_13.jpg";
             var uri = "https://berryprediction-prediction.cognitiveservices.azure.com/customvision/v3.0/Prediction/1cd03d8e-e79a-4e17-ba18-a6d672ccd759/classify/iterations/berryR/url" + queryString;
 
-            HttpResponseMessage response;
+          
 
             // Request body
             byte[] byteData = Encoding.UTF8.GetBytes("{body}");
@@ -39,7 +39,7 @@ namespace BerryApp
             using (var content = new ByteArrayContent(byteData))
             {
                content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-               response = await client.PostAsync(uri, content);
+               return = await client.PostAsync(uri, content);
         }
     }
 }

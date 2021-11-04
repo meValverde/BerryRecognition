@@ -39,7 +39,7 @@ namespace BerryApp
             {
                content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
                response = await client.PostAsync(uri, content);
-               string responseBody await response.Content.ReadAsStringAsync();
+               string responseBody = await response.Content.ReadAsStringAsync();
                 
             }
            return new OkObjectResult(responseBody);

@@ -18,8 +18,8 @@ function analyzeImage() {
         {
             method: 'POST',
             headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Prediction-Key':'c577dc58f5374413a3fea829c4938399'
               },
             body: JSON.stringify(imageUrl)
         })

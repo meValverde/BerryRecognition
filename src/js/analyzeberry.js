@@ -13,15 +13,8 @@ function analyzeImage() {
         imageUrl: imageUrl
     };
 
-    fetch(uri,
-        {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Prediction-key': 'c577dc58f5374413a3fea829c4938399'
-            },
-            body: JSON.stringify(jsonBodyItem)
-        })
+    fetch(uri)
+
         .then(response => {
             return response.json()
         })
@@ -36,7 +29,7 @@ function analyzeImage() {
             imageDiv.appendChild(imgTag);
             
             var fullTextResponse = '<h4>Analyze result</h4>';
-            var secondResponse = '<h4>Tags</h4>';
+            
 
             fullTextResponse += '<p><b>Berry</b>: ' + predictions[0].tagName[0].text + '.<p/> <br/>';
 

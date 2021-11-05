@@ -38,7 +38,7 @@ namespace BerryApp
     
             //string imageUrlex = "https://www.jespersplanteskole.dk/media/catalog/product/cache/1/image/1200x1200/9df78eab33525d08d6e5fb8d27136e95/s/y/symphoricarpos_doorenbosii_white_hedge_79_95_13.jpg";
             string responseBody;
-            byte[] byteData = Encoding.UTF8.GetBytes(data);
+            byte[] byteData = Encoding.UTF8.GetBytes(requestBody);
 
             using (var content = new ByteArrayContent(byteData))
             {

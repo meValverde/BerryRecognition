@@ -3,22 +3,26 @@ const uri = 'https://gentle-forest-08ae55e03.azurestaticapps.net/api/BerryRecog'
 function analyzeImage() {   
     var imageUrl = document.getElementById('imageUrlInput').value;
     var isValidUrl = validateUrl(imageUrl);
+    console.write(JSON.stringify(imageUrl));
 
     if (isValidUrl == false) {
         document.getElementById('imageDescription').innerHTML = 'Du har ikke angivet en valid url';
         return;
     }
 
-    const jsonBodyItem = {
-        imageUrl: imageUrl
-    };
+   // const jsonBodyItem = {
+        //imageUrl: imageUrl
+   // };
 
     fetch(uri,
         {
             method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+              },
             body: JSON.stringify(imageUrl)
         })
-    
+        
         .then(response => {
             return response.json()
         })

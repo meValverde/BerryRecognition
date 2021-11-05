@@ -1,22 +1,32 @@
 const uri = 'https://gentle-forest-08ae55e03.azurestaticapps.net/api/BerryRecog';
 
 function analyzeImage() {   
-    var imageUrll = document.getElementById('imageUrlInput').value;
-    var isValidUrl = validateUrl(imageUrll);
+    var imageUrl = document.getElementById('imageUrlInput').value;
+    var isValidUrl = validateUrl(imageUrl);
 
     if (isValidUrl == false) {
         document.getElementById('imageDescription').innerHTML = 'Du har ikke angivet en valid url';
         return;
     }
 
+    const jsonBodyItem = {
+        imageUrl: imageUrl
+    };
 
-    fetch(uri)
+    fetch(uri,
+        {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(jsonBodyItem)
+        })
 
         .then(response => {
             return response.json()
         })
         .then(data => {
-            var imageUrl = imageUrll;
             var imageDiv = document.getElementById('previewImageContainer');
             imageDiv.innerHTML = "";
 

@@ -16,9 +16,9 @@ function analyzeImage() {
     fetch(uri,
         {
             method: 'POST',
-            body: JSON.stringify(jsonBodyItem)
+            body: JSON.stringify(imageUrl)
         })
-
+    
         .then(response => {
             return response.json()
         })

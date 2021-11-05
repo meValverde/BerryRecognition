@@ -14,10 +14,7 @@ function analyzeImage() {
     };
 
     fetch(uri)
-
-        .then(response => {
-            return response.json()
-        })
+        .then(response => response.json())
         .then(data => {
             var imageDiv = document.getElementById('previewImageContainer');
             imageDiv.innerHTML = "";

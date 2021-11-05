@@ -32,8 +32,8 @@ namespace BerryApp
 
            // queryString["application"] = someUrl;
             string uri = "https://berryprediction-prediction.cognitiveservices.azure.com/customvision/v3.0/Prediction/1cd03d8e-e79a-4e17-ba18-a6d672ccd759/classify/iterations/berryR/url"; 
-            string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-            dynamic data=JsonConvert.DeserializeObject(requestBody);
+            //string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+            //dynamic data=JsonConvert.DeserializeObject(requestBody);
 
             string imageUrl=data?.imageUrl;
 

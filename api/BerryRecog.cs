@@ -23,14 +23,12 @@ namespace BerryApp
             var client = new HttpClient();
             var queryString = HttpUtility.ParseQueryString(string.Empty);
 
-            var body;
+            var body = reader.ReadToEnd();
 
            using (var mem = new MemoryStream())
            using (var reader = new StreamReader(mem))
             {
                 req.Body.CopyTo(mem);
- 
-                body = reader.ReadToEnd();
  
                 mem.Seek(0, SeekOrigin.Begin);
  

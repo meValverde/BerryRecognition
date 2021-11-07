@@ -31,7 +31,7 @@ namespace BerryApp
                 req.Body.CopyTo(mem);
                 body = reader.ReadToEnd();
                 mem.Seek(0, SeekOrigin.Begin);
-                body = reader.ReadAsStringAsync();
+                body = reader.ReadToEnd();
             }
             
             Console.Write(body);

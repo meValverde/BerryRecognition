@@ -23,9 +23,10 @@ namespace BerryApp
             var client = new HttpClient();
             var queryString = HttpUtility.ParseQueryString(string.Empty);
 
-            Stream requ = Request.InputStream;
-            requ.Seek(0, System.IO.SeekOrigin.Begin);
-            string json = new StreamReader(requ).ReadToEnd();
+            var bodyStream = new StreamReader(HttpContext.Current.Request.InputStream);
+            bodyStream.BaseStream.Seek(0, SeekOrigin.Begin);
+            var bodyText = bodyStream.ReadToEnd();
+            
 
            //client.DefaultRequestHeaders.Add("Prediction-Key", "c577dc58f5374413a3fea829c4938399");
             //string someUrl="https://www.jespersplanteskole.dk/media/catalog/product/cache/1/image/1200x1200/9df78eab33525d08d6e5fb8d27136e95/s/y/symphoricarpos_doorenbosii_white_hedge_79_95_13.jpg";
@@ -42,7 +43,7 @@ namespace BerryApp
     
             //string imageUrlex = "https://www.jespersplanteskole.dk/media/catalog/product/cache/1/image/1200x1200/9df78eab33525d08d6e5fb8d27136e95/s/y/symphoricarpos_doorenbosii_white_hedge_79_95_13.jpg";
             string responseBody;
-            byte[] byteData = Encoding.UTF8.GetBytes("{\""+json+"\" }");
+            byte[] byteData = Encoding.UTF8.GetBytes("{\""+bodyText+"\" }");
 
             using (var content = new ByteArrayContent(byteData))
             {
@@ -55,6 +56,7 @@ namespace BerryApp
 
             
         }
+
             
               
     }

@@ -23,17 +23,10 @@ namespace BerryApp
             var client = new HttpClient();
             var queryString = HttpUtility.ParseQueryString(string.Empty);
 
-            var body = "";
+            string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+            requestBody.BaseStream.Seek(0,SeekOrigin.Begin);
+            string body = requestBody.ReadAsStringAsync();
 
-           using (var mem = new MemoryStream())
-           using (var reader = new StreamReader(mem))
-            {
-                req.Body.CopyTo(mem);
-                body = reader.ReadToEnd();
-                mem.Seek(0, SeekOrigin.Begin);
-                body = reader.ReadToEnd();
-            }
-            
             Console.Write(body);
 
            //client.DefaultRequestHeaders.Add("Prediction-Key", "c577dc58f5374413a3fea829c4938399");

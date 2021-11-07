@@ -23,11 +23,21 @@ namespace BerryApp
             var client = new HttpClient();
             var queryString = HttpUtility.ParseQueryString(string.Empty);
 
-            req.InputStream.Position = 0;
+            var body;
 
-            var rawRequestBody = new StreamReader(req.InputStream).ReadToEnd();
+           using (var mem = new MemoryStream())
+           using (var reader = new StreamReader(mem))
+            {
+                req.Body.CopyTo(mem);
+ 
+                body = reader.ReadToEnd();
+ 
+                mem.Seek(0, SeekOrigin.Begin);
+ 
+                body = reader.ReadToEnd();
+            }
             
-            Console.Write(rawRequestBody);
+            Console.Write(body);
 
            //client.DefaultRequestHeaders.Add("Prediction-Key", "c577dc58f5374413a3fea829c4938399");
             //string someUrl="https://www.jespersplanteskole.dk/media/catalog/product/cache/1/image/1200x1200/9df78eab33525d08d6e5fb8d27136e95/s/y/symphoricarpos_doorenbosii_white_hedge_79_95_13.jpg";
@@ -44,7 +54,7 @@ namespace BerryApp
     
             //string imageUrlex = "https://www.jespersplanteskole.dk/media/catalog/product/cache/1/image/1200x1200/9df78eab33525d08d6e5fb8d27136e95/s/y/symphoricarpos_doorenbosii_white_hedge_79_95_13.jpg";
             string responseBody;
-            byte[] byteData = Encoding.UTF8.GetBytes("{\""+rawRequestBody+"\" }");
+            byte[] byteData = Encoding.UTF8.GetBytes("{\""+body+"\" }");
 
             using (var content = new ByteArrayContent(byteData))
             {

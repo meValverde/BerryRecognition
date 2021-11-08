@@ -40,7 +40,7 @@ function analyzeImage() {
             var fullTextResponse = '<h4>Analyze result</h4>';
             
 
-            fullTextResponse += '<p><b>Berry</b>: ' + predictions[0].tagName[0].text + '.<p/> <br/>';
+            fullTextResponse += '<p><b>Berry</b>: ' + predictions.tagName[0].text + '.<p/> <br/>';
 
 
             document.getElementById('imageDescription').innerHTML = fullTextResponse;

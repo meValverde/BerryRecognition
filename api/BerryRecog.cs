@@ -25,7 +25,7 @@ namespace BerryApp
 
             stream bodyStream = await new StreamReader(req.Body).ReadToEndAsync();
             bodyStream.Seek(0, SeekOrigin.Begin);
-            string body = bodyStream.ReadString()
+            string body = bodyStream.ReadString();
             
             
             

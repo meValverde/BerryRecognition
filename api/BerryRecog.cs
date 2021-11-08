@@ -23,10 +23,11 @@ namespace BerryApp
             var client = new HttpClient();
             var queryString = HttpUtility.ParseQueryString(string.Empty);
 
-            string body = await req.Content.ReadAsStringAsync();
-            
-            
-            
+            string requestBody = new StreamReader(req.InputStream).ReadToEnd();
+            dynamic data=JsonConvert.DeserializeObject(requestBody);
+
+            string body = data?.body;
+
             
 
             Console.Write(body);
@@ -46,7 +47,7 @@ namespace BerryApp
     
             //string imageUrlex = "https://www.jespersplanteskole.dk/media/catalog/product/cache/1/image/1200x1200/9df78eab33525d08d6e5fb8d27136e95/s/y/symphoricarpos_doorenbosii_white_hedge_79_95_13.jpg";
             string responseBody;
-            byte[] byteData = Encoding.UTF8.GetBytes("{\""+body+"\" }");
+            byte[] byteData = Encoding.UTF8.GetBytes("{body:\""+body+"\" }");
 
             using (var content = new ByteArrayContent(byteData))
             {

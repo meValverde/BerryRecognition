@@ -18,12 +18,12 @@ namespace BerryApp
     {
         [FunctionName("BerryRecog")]
         public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req, ILogger log, ExecutionContext context)
+            [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req, ILogger log, ExecutionContext context, HttpRequestBase HttpRequest)
         {
             var client = new HttpClient();
             var queryString = HttpUtility.ParseQueryString(string.Empty);
 
-            string requestBody = new StreamReader(req.InputStream).ReadToEnd();
+            string requestBody = new StreamReader(HttpRequest.InputStream).ReadToEnd();
             dynamic data=JsonConvert.DeserializeObject(requestBody);
 
             string body = data?.body;

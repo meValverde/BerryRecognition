@@ -26,7 +26,7 @@ namespace BerryApp
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
             dynamic data=JsonConvert.DeserializeObject(requestBody);
 
-            string body=data?.body;
+            string body=data?.imageUrl;
 
             
 

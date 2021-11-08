@@ -19,7 +19,6 @@ function analyzeImage() {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Prediction-Key':'c577dc58f5374413a3fea829c4938399'
               },
             body: JSON.stringify(imageUrl)
         })
@@ -36,6 +35,7 @@ function analyzeImage() {
             imgTag.classList = 'img-fluid';
 
             imageDiv.appendChild(imgTag);
+            console.log(JSON.stringify(imageUrl))
             console.log(data)
             
             var fullTextResponse = '<h4>Analyze result</h4>';

@@ -25,8 +25,8 @@ namespace BerryApp
 
             var reader = new StreamReader(req.Body);
             reader.BaseStream.Seek(0, SeekOrigin.Begin); 
-            var rawMessage = reader.ReadToEnd();
-            string body = await rawMessage.ReadAsStringAsync();
+            var body = reader.ReadToEnd();
+            
             
 
             Console.Write(body);

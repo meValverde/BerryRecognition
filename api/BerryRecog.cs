@@ -24,7 +24,7 @@ namespace BerryApp
             var queryString = HttpUtility.ParseQueryString(string.Empty);
 
             string body = await new StreamReader(req.Body).ReadToEndAsync();
-            requestBody.Seek(0, SeekOrigin.Begin); 
+            body.Seek(0, SeekOrigin.Begin); 
             
             
             

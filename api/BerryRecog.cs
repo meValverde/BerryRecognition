@@ -23,7 +23,7 @@ namespace BerryApp
             var client = new HttpClient();
             var queryString = HttpUtility.ParseQueryString(string.Empty);
 
-            string body = await Request.Content.ReadAsStringAsync();
+            string body = await req.Content.ReadAsStringAsync();
             
             
             

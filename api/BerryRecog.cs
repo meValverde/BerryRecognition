@@ -23,10 +23,10 @@ namespace BerryApp
             var client = new HttpClient();
             var queryString = HttpUtility.ParseQueryString(string.Empty);
 
-            string requestBody = new StreamReader(HttpRequest.InputStream).ReadToEnd();
+            string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
             dynamic data=JsonConvert.DeserializeObject(requestBody);
 
-            string body = data?.body;
+            string body=data?.body;
 
             
 

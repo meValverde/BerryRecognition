@@ -49,7 +49,7 @@ function analyzeImage() {
             console.log(data)
         })
         .catch(err => {
-            document.getElementById('imageDescription').innerHTML = "Something went wrong";
+            document.getElementById('imageDescription').innerHTML = err.message;
         })
 }
 

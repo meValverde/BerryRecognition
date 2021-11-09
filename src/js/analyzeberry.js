@@ -4,6 +4,7 @@ function analyzeImage() {
     var imageUrl = document.getElementById('imageUrlInput').value;
     var isValidUrl = validateUrl(imageUrl);
     
+    
 
     if (isValidUrl == false) {
         document.getElementById('imageDescription').innerHTML = 'Du har ikke angivet en valid url';
@@ -21,7 +22,7 @@ function analyzeImage() {
               //  'Content-Type': 'application/json',
               //  'Prediction-Key':'c577dc58f5374413a3fea829c4938399'
              // },
-            image:imageUrl
+            image:string(imageUrl)
             
         })
         

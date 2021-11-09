@@ -22,7 +22,7 @@ function analyzeImage() {
               //  'Content-Type': 'application/json',
               //  'Prediction-Key':'c577dc58f5374413a3fea829c4938399'
              // },
-            image:String(imageUrl)
+            body:'https://www.jespersplanteskole.dk/media/catalog/product/cache/1/image/450x450/9df78eab33525d08d6e5fb8d27136e95/s/y/symphoricarpos_doorenbosii_white_hedge_79_95_13.jpg'
             
         })
         

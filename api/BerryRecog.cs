@@ -26,7 +26,7 @@ namespace BerryApp
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
             dynamic data=JsonConvert.DeserializeObject(requestBody);
 
-            string body=data?.image;
+            string body=data?.body;
 
            client.DefaultRequestHeaders.Add("Prediction-Key", "c577dc58f5374413a3fea829c4938399");
             //string someUrl="https://www.jespersplanteskole.dk/media/catalog/product/cache/1/image/1200x1200/9df78eab33525d08d6e5fb8d27136e95/s/y/symphoricarpos_doorenbosii_white_hedge_79_95_13.jpg";
@@ -43,7 +43,7 @@ namespace BerryApp
     
             //string imageUrlex = "https://www.jespersplanteskole.dk/media/catalog/product/cache/1/image/1200x1200/9df78eab33525d08d6e5fb8d27136e95/s/y/symphoricarpos_doorenbosii_white_hedge_79_95_13.jpg";
             string responseBody;
-            byte[] byteData = Encoding.UTF8.GetBytes("{'url':'"+body+"'}");
+            byte[] byteData = Encoding.UTF8.GetBytes("{'url':"+body+"}");
 
             using (var content = new ByteArrayContent(byteData))
             {

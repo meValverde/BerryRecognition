@@ -2,20 +2,83 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+h5{
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  margin-top: 0;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #00221c;
+  display: block;
+  margin-block-start: 1.67em;
+  margin-block-end: 1.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px; 
+}
+
+h1{
+   color: #F1B980;
+}
+
+.presentation > p{
+  color: white;
+}
+.container{
+  height: 800px!important;
+  position: relative!important;
+}
+
+.row{
+  margin: 0;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+ -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
 html, body {
   margin: 0;
   border: 0;
   padding: 0;
-  background-color: #fff;
+  background-color: #005c45;
 }
 
-main {
-  margin: auto;
-  width: 50%;
-  padding: 20px;
+.app-content{
+    padding: 10px;
+    background-color: white;
+    border-width: 0;
+    box-shadow: 0 0.375rem 1.5rem 0 rgb(140 152 164 / 13%);
+    position: relative;
+ 
+  display: flex;
+
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+
+  background-clip: border-box;
+  border: 0.0625rem solid rgba(0,34,28,.1);
+  border-radius: 0.3125rem;
+  height: 600px;
 }
 
-main > h1 {
+.button{
+  cursor: pointer;
+  padding: 0.75rem 1rem;
+  font-size: 1.125rem;
+  border-radius: 0.3125rem;
+  color: #fff;
+  background-color: #008060;
+  border-color: #008060;
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
   text-align: center;
-  font-size: 3.5em;
+  vertical-align: middle;
+  user-select: none;
+  border: 0.0625rem solid transparent;
+  transition: all .2s ease-in-out;
+  box-sizing: border-box; 
 }
+

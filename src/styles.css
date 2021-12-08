@@ -82,3 +82,7 @@ html, body {
   box-sizing: border-box; 
 }
 
+#previewImageContainer{
+  width: 80%;
+}
+

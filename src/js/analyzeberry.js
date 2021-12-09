@@ -33,18 +33,18 @@ function analyzeImage() {
             imgTag.classList = 'img-fluid';
 
             imageDiv.appendChild(imgTag);
-            console.log(data)
+         
             
             var fullTextResponse = '<h4>Analyze result</h4>';
             
 
             fullTextResponse += '<p><b>Berry</b>: ' + data.predictions[0].tagName+ '.<p/> <br/>';
-
+        
 
             document.getElementById('imageDescription').innerHTML = fullTextResponse;
      
 
-            console.log(data)
+           
         })
         .catch(err => {
             document.getElementById('imageDescription').innerHTML = err.message;

@@ -30,7 +30,7 @@ namespace BerryApp
 
             string body=data?.imageUrl;
 
-            client.DefaultRequestHeaders.Add("Prediction-Key", config["CustomVisionKey"];
+            client.DefaultRequestHeaders.Add("Prediction-Key", config["CustomVisionKey"]);
            
             string uri = "https://berryprediction-prediction.cognitiveservices.azure.com/customvision/v3.0/Prediction/1cd03d8e-e79a-4e17-ba18-a6d672ccd759/classify/iterations/berryR/url"; 
           

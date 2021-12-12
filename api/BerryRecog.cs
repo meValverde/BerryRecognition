@@ -20,6 +20,11 @@ namespace BerryApp
         public static async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req, ILogger log, ExecutionContext context)
         {
+            var config = new ConfigurationBuilder()
+            .SetBasePath(context.FunctionAppDirectory)
+            .AddJsonFile("local.settings.json",optional:true, reloadOnChange:true)
+            .AddEnvironmentVariables()
+            .Build();
         
 
             var client = new HttpClient();

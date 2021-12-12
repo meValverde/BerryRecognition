@@ -20,6 +20,8 @@ namespace BerryApp
         public static async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req, ILogger log, ExecutionContext context)
         {
+        
+
             var client = new HttpClient();
             var queryString = HttpUtility.ParseQueryString(string.Empty);
 
@@ -28,7 +30,7 @@ namespace BerryApp
 
             string body=data?.imageUrl;
 
-            client.DefaultRequestHeaders.Add("Prediction-Key", "c577dc58f5374413a3fea829c4938399");
+            client.DefaultRequestHeaders.Add("Prediction-Key", config["CustomVisionKey"];
            
             string uri = "https://berryprediction-prediction.cognitiveservices.azure.com/customvision/v3.0/Prediction/1cd03d8e-e79a-4e17-ba18-a6d672ccd759/classify/iterations/berryR/url"; 
           

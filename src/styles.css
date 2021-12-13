@@ -24,7 +24,7 @@ h1{
   color: white;
 }
 .container{
-  height: 800px!important;
+  height: 600px!important;
   position: relative!important;
 }
 
@@ -57,7 +57,7 @@ html, body {
     background-clip: border-box;
     border: 0.0625rem solid rgba(0,34,28,.1);
     border-radius: 0.3125rem;
-    height: 800px;
+    height: 600px;
     overflow: auto;
 }
 

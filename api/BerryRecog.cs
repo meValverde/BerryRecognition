@@ -52,12 +52,17 @@ namespace BerryApp
                responseBody = await response.Content.ReadAsStringAsync();
                 
             }
-           return new OkObjectResult(responseBody);
 
+            Console.WriteLine(responseBody);
+            return new OkObjectResult(responseBody);
+
+           
             
         }
 
-            
+           
               
     }
+
+  
 }

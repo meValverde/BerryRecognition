@@ -13,6 +13,7 @@ using System.Net.Http;
 using System.Web;
 using Microsoft.Extensions.Configuration;
 
+
 namespace BerryApp
 {
     public static class BerryRecog
@@ -53,10 +54,11 @@ namespace BerryApp
                 
             }
 
-            Console.WriteLine(responseBody);
+            System.Diagnostics.Debug.WriteLine(responseBody);
+
             return new OkObjectResult(responseBody);
 
-           
+            
             
         }
 

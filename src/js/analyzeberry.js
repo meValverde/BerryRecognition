@@ -39,6 +39,21 @@ function analyzeImage() {
             
 
             fullTextResponse += '<p><b>Berry</b>: ' + data.predictions[0].tagName+ '.<p/> <br/>';
+            switch(data.predictions[0].tagName){
+                case "blåbær":
+                case "havtorn":
+                case "hindbær":
+                case "tranebær":
+                        fullTextResponse+='<b>Its edible!</b><br />'
+                        break;
+                case "havtorn":
+                case "taks":
+                    fullTextResponse+='<b>Its edible!</b><br />'
+                    break;
+              
+                
+             }
+            /*
             if ( data.predictions[0].tagName == "blåbær"){
                 fullTextResponse+='<b>Its edible!</b><br />';
             }
@@ -63,7 +78,7 @@ function analyzeImage() {
                 fullTextResponse+='<b>Its edible!</b><br />';
             }
 
-            document.getElementById('imageDescription').innerHTML = fullTextResponse;
+            document.getElementById('imageDescription').innerHTML = fullTextResponse;*/
      
 
            

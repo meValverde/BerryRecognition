@@ -54,17 +54,12 @@ namespace BerryApp
                 
             }
 
-            System.Diagnostics.Debug.WriteLine(responseBody);
-
             return new OkObjectResult(responseBody);
-
-            
-            
         }
 
+            
            
               
     }
-
   
 }

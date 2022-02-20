@@ -36,11 +36,9 @@ function analyzeImage() {
          
             
             var fullTextResponse = '<h4>Analyze result</h4>';
-            
-
             fullTextResponse += '<p><b>Berry</b>: ' + data.predictions[0].tagName+ '.<p/> <br/>';
-            var berry = data.predictions[0].tagName;
-            switch(berry){
+            
+            switch(data.predictions[0].tagName){
                 case "blåbær":
                 case "havtorn":
                 case "hindbær":
@@ -52,40 +50,13 @@ function analyzeImage() {
                     fullTextResponse+='<b>Its edible!</b><br />'
                     break;
                 default:
-                    console.log("I don't own a pet");
+                    fullTextResponse+='<b>Could not recognize berry</b><br />'
                     break;
-              
-                
+       
              }
-            /*
-            if ( data.predictions[0].tagName == "blåbær"){
-                fullTextResponse+='<b>Its edible!</b><br />';
-            }
-
-            else if ( data.predictions[0].tagName == "havtorn"){
-                fullTextResponse+='<b>Its edible!</b><br />';
-            }
-
-            else if ( data.predictions[0].tagName == "hindbær"){
-                fullTextResponse+='<b>Its edible!</b><br />';
-            }
-
-            else if ( data.predictions[0].tagName == "snebær"){
-                fullTextResponse+='<b>DONT eat it!</b><br />';
-            }
-
-            else if ( data.predictions[0].tagName == "taks"){
-                fullTextResponse+='<b>DONT eat it!</b><br />';
-            }
-
-            else if ( data.predictions[0].tagName == "tranebær"){
-                fullTextResponse+='<b>Its edible!</b><br />';
-            }*/
-
+          
             document.getElementById('imageDescription').innerHTML = fullTextResponse;
-     
-
-           
+          
         })
         .catch(err => {
             document.getElementById('imageDescription').innerHTML = err.message;

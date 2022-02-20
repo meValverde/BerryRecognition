@@ -80,9 +80,9 @@ function analyzeImage() {
 
             else if ( data.predictions[0].tagName == "tranebær"){
                 fullTextResponse+='<b>Its edible!</b><br />';
-            }
+            }*/
 
-            document.getElementById('imageDescription').innerHTML = fullTextResponse;*/
+            document.getElementById('imageDescription').innerHTML = fullTextResponse;
      
 
            

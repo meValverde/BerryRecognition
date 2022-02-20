@@ -39,13 +39,14 @@ function analyzeImage() {
             
 
             fullTextResponse += '<p><b>Berry</b>: ' + data.predictions[0].tagName+ '.<p/> <br/>';
-            switch(data.predictions[0].tagName){
+            var berry = data.predictions[0].tagName;
+            switch(berry){
                 case "blåbær":
                 case "havtorn":
                 case "hindbær":
                 case "tranebær":
-                        fullTextResponse+='<b>Its edible!</b><br />'
-                        break;
+                    fullTextResponse+='<b>Its edible!</b><br />'
+                    break;
                 case "havtorn":
                 case "taks":
                     fullTextResponse+='<b>Its edible!</b><br />'

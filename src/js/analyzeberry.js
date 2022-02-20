@@ -51,6 +51,9 @@ function analyzeImage() {
                 case "taks":
                     fullTextResponse+='<b>Its edible!</b><br />'
                     break;
+                default:
+                    console.log("I don't own a pet");
+                    break;
               
                 
              }

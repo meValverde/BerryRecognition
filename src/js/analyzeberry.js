@@ -45,9 +45,9 @@ function analyzeImage() {
                 case "tranebær":
                     fullTextResponse+='<b>Its edible!</b><br />'
                     break;
-                case "havtorn":
+                case "snebær":
                 case "taks":
-                    fullTextResponse+='<b>Its edible!</b><br />'
+                    fullTextResponse+='<b>Its not edible!</b><br />'
                     break;
                 default:
                     fullTextResponse+='<b>Could not recognize berry</b><br />'
